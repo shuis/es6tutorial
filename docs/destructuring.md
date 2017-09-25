@@ -323,13 +323,13 @@ foo // undefined
 
 ```javascript
 // 报错
-let {foo: {bar}} = {baz: 'baz'};
+let {foo: {bar}} = {bar: 'baz'};
 ```
 
 上面代码中，等号左边对象的`foo`属性，对应一个子对象。该子对象的`bar`属性，解构时会报错。原因很简单，因为`foo`这时等于`undefined`，再取子属性就会报错，请看下面的代码。
 
 ```javascript
-let _tmp = {baz: 'baz'};
+let _tmp = {bar: 'baz'};
 _tmp.foo.bar // 报错
 ```
 
